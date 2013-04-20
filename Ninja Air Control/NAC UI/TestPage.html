@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Ninja Air Control SignalR Test Page </title>
+    <link href="Content/TestPage.css" rel="stylesheet" />
+</head>
+<body>
+    <h2> Ninja Air Control SignalR Test Page </h2>
+
+    <!--Container with the map and the flying panes-->
+    <div class="flight-map" data-bind="foreach: ActivePlanes">
+        <span class="plane-indicator" data-bind="planePosition: $data"></span>
+    </div>
+        
+
+
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.0.1.min.js"></script>
+    <script src="/signalr/hubs"></script>
+
+    <script src="Scripts/knockout-2.2.1.js"></script>
+
+    <script src="Scripts/TestPageViewModel.js"></script>
+</body>
+</html>

@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninja Air Control", "Ninja Air Control\Ninja Air Control.csproj", "{B5044F86-EA84-46D1-9704-A0C522F3F188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAC UI", "NAC UI\NAC UI.csproj", "{CBEFA74B-06D5-413A-9130-0146E54EF3CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{B5044F86-EA84-46D1-9704-A0C522F3F188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5044F86-EA84-46D1-9704-A0C522F3F188}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5044F86-EA84-46D1-9704-A0C522F3F188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEFA74B-06D5-413A-9130-0146E54EF3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEFA74B-06D5-413A-9130-0146E54EF3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEFA74B-06D5-413A-9130-0146E54EF3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEFA74B-06D5-413A-9130-0146E54EF3CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

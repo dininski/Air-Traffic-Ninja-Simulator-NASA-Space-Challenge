@@ -1,0 +1,20 @@
+﻿body {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.flight-map {
+    width:1200px;
+    height:600px;
+    background: url(/Content/earth-satellite-map-earth-satellite-map.jpg) no-repeat center;
+    position:relative;
+    background-size:1200px 600px;
+}
+
+.plane-indicator {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border:6px solid red;
+    position:absolute;
+}
