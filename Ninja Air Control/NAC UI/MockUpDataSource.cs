@@ -8,10 +8,12 @@ namespace NAC_UI
 {
     public class MockUpDataSource
     {
-        public static List<Plane> Planes = new List<Plane>();        
+        public static List<Plane> Planes = new List<Plane>();
+        public static List<object> Airports = new List<object>();
 
         public static void LoadData () {
             FillPlanes();
+            FillAirports();
         }
 
         private static void FillPlanes() {
@@ -76,6 +78,40 @@ namespace NAC_UI
             });
         }
 
+        private static void FillAirports() 
+        {
+            Airports.Add(new { 
+                X = 303,
+                Y = 161,
+                City = "Chicago",
+                @Airport = "O'Hare Intarnational"
+            });
+
+            Airports.Add(new
+            {
+                X = 642,
+                Y = 157,
+                City = "Rome",
+                @Airport = "Ciampino Airport"
+            });
+
+            Airports.Add(new
+            {
+                X = 1063,
+                Y = 179,
+                City = "Tokyo",
+                @Airport = "Haneda Airport"
+            });
+
+            Airports.Add(new
+            {
+                X = 452,
+                Y = 377,
+                City = "Rio de Janeiro",
+                @Airport = "Galeão International"
+            });
+        }
+
         public static List<object> GetUpdatedLocations() 
         {
             List<object> newLocations = new List<object>();
@@ -108,7 +144,7 @@ namespace NAC_UI
             public string Company {get; set;}
             public string Destination {get; set;}
             public int Type { get; set; }
-        }
+        }      
 
     }
 }

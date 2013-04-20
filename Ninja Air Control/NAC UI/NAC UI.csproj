@@ -79,6 +79,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\airplane.png" />
+    <Content Include="Content\airplane-red.png" />
+    <Content Include="Content\airplane-green.png" />
+    <Content Include="Content\airport_terminal.png" />
+    <Content Include="Content\apartment.png" />
     <Content Include="Content\earth-satellite-map-earth-satellite-map.jpg" />
     <Content Include="Content\TestPage.css" />
     <Content Include="Global.asax" />

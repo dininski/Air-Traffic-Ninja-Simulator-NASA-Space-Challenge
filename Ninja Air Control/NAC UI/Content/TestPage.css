@@ -17,11 +17,15 @@ h2, h3 {
 }
 
 .plane-indicator {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border:6px solid red;
+    background:url(/Content/airplane.png) no-repeat center;
     position:absolute;
+    padding:9px;
+}
+
+.airport-indicator {
+    background:url(/Content/airport_terminal.png) no-repeat center;
+    position:absolute;
+    padding:17px;
 }
 
 .plane-data {

@@ -14,7 +14,7 @@ namespace NAC_UI
 
         public void LoadActivePlanes()
         {
-            Clients.Caller.LoadActivePlanes(JsonConvert.SerializeObject(MockUpDataSource.Planes));
+            Clients.Caller.LoadActivePlanesAndAirports(JsonConvert.SerializeObject(MockUpDataSource.Planes), JsonConvert.SerializeObject(MockUpDataSource.Airports));
         }
 
         public static void InvokeGlobalMessage(object dummyObj)

@@ -10,8 +10,14 @@
     <h2> Ninja Air Control SignalR Test Page </h2>
 
     <!--Container with the map and the flying panes-->
-    <div class="flight-map" data-bind="foreach: ActivePlanes">
+    <div class="flight-map" >
+        <!-- ko foreach: ActivePlanes -->
         <span class="plane-indicator" data-bind="planePosition: $data"></span>
+        <!-- /ko -->
+
+        <!-- ko foreach: ActiveAirports -->
+        <span class="airport-indicator" data-bind="airportPosition: $data"></span>
+        <!-- /ko -->
     </div>
     
     
