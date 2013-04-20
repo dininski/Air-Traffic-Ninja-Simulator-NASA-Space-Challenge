@@ -20,6 +20,8 @@ namespace NinjaAirControl
 
         public bool HasLanded { get; private set; }
 
+        private DateTime lastUpdated; 
+
         public Aircraft(AircraftIdData identification,
             AirTrafficController trafficController,
             Pilot pilot,
@@ -33,6 +35,7 @@ namespace NinjaAirControl
             this.FlightPlan = flightPlan;
             //the initial position is the position of the departure airport
             this.CurrentPosition = FlightPlan.DepartureAirport.Coordinates;
+            this.lastUpdated = this.FlightPlan.DepartureDateTime;
             this.Speed = speed;
             this.CurrentHeadingInDegrees = currentHeadingInDegrees;
             HasLanded = false;
@@ -43,14 +46,18 @@ namespace NinjaAirControl
             double currentHeadingInRadians = MeasureConverter.ConvertDegreeToRadian(CurrentHeadingInDegrees);
             decimal newLongitude = CurrentPosition.Longitude;
             decimal newLatitude = CurrentPosition.Latitude;
-            newLongitude += (decimal)(Speed * Math.Sin(currentHeadingInRadians));
-            newLatitude += (decimal)(Speed * Math.Cos(currentHeadingInRadians));
+            DateTime currentDateTime= new DateTime();
+            int distanceElapsed = (currentDateTime - lastUpdated).Hours * Speed;
+            newLongitude += (decimal)(distanceElapsed * Math.Sin(currentHeadingInRadians));
+            newLatitude += (decimal)(distanceElapsed * Math.Cos(currentHeadingInRadians));
             this.CurrentPosition = new Position3D(newLongitude, newLatitude, CurrentPosition.Altitude);
 
             if (CurrentPosition.CompareTo(FlightPlan.ArrivalAirport.Coordinates) == 0)
             {
                 HasLanded = true;
             }
+
+            lastUpdated = currentDateTime;
         }
         //TODO: Calculate current position method
         //TODO: Method that changes the speed
