@@ -10,12 +10,23 @@ namespace NinjaAirControl
     {
         // longitude, latitude - degrees!
         // altitde - feet !
-
         private decimal longitude; // x
+        private int longitudeInNauticalMiles;
+
+        public int LongitudeInNauticalMiles
+        {
+            get
+            {
+                return longitudeInNauticalMiles;
+            }
+            set
+            {
+                longitudeInNauticalMiles = value;
+            }
+        }
+        
         private decimal latitude; // y
         private decimal? altitude; // z
-
-        private 
 
         public Position3D(decimal longitude, decimal latitude, decimal? altitude = null)
         {
@@ -89,7 +100,7 @@ namespace NinjaAirControl
         {
             var comparePosition = obj as Position3D;
             int compareResult;
-            if (this.Latitude == comparePosition.Latitude && 
+            if (this.Latitude == comparePosition.Latitude &&
                 this.Longitude == comparePosition.Longitude &&
                 this.altitude == comparePosition.altitude)
             {
