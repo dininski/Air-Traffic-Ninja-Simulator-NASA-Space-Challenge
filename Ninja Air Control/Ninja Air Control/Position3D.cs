@@ -11,20 +11,6 @@ namespace NinjaAirControl
         // longitude, latitude - degrees!
         // altitde - feet !
         private decimal longitude; // x
-        private int longitudeInNauticalMiles;
-
-        public int LongitudeInNauticalMiles
-        {
-            get
-            {
-                return longitudeInNauticalMiles;
-            }
-            set
-            {
-                longitudeInNauticalMiles = value;
-            }
-        }
-        
         private decimal latitude; // y
         private decimal? altitude; // z
 
@@ -35,12 +21,29 @@ namespace NinjaAirControl
             this.Altitude = altitude;
         }
 
+        public int LongitudeInNauticalMiles
+        {
+            get
+            {
+                return MeasureConverter.ConvertLongtitudeDegreesToNauticalMiles(this.Longitude);
+            }
+        }
+        
+        public int LatitudeInNauticalMiles
+        {
+            get
+            {
+                return MeasureConverter.ConvertLatitudeDegreesToNauticalMiles(this.Latitude);
+            }
+        }
+
         public decimal Longitude
         {
             get
             {
                 return this.longitude;
             }
+
             private set
             {
                 if (value < 0)
@@ -58,6 +61,7 @@ namespace NinjaAirControl
             {
                 return this.latitude;
             }
+
             private set
             {
                 if (value < 0)
@@ -75,6 +79,7 @@ namespace NinjaAirControl
             {
                 return this.altitude;
             }
+
             private set
             {
                 if (value < 0)
@@ -88,7 +93,7 @@ namespace NinjaAirControl
 
         public override string ToString()
         {
-            return String.Format("Longitude: {0}, Latitude: {1}, Altitude: {2}", this.longitude, this.latitude, this.altitude);
+            return string.Format("Longitude: {0}, Latitude: {1}, Altitude: {2}", this.longitude, this.latitude, this.altitude);
         }
 
         /// <summary>
@@ -110,6 +115,7 @@ namespace NinjaAirControl
             {
                 compareResult = 1;
             }
+
             return compareResult;
         }
     }
