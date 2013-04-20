@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ninja_Air_Control
+namespace NinjaAirControl
 {
     public class Aircraft
     {

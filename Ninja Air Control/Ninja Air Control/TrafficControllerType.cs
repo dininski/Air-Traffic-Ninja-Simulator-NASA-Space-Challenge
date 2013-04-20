@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ninja_Air_Control
+namespace NinjaAirControl
 {
     public enum TrafficControllerType
     {

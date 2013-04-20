@@ -7,7 +7,7 @@
     <ProjectGuid>{B5044F86-EA84-46D1-9704-A0C522F3F188}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ninja_Air_Control</RootNamespace>
+    <RootNamespace>NinjaAirControl</RootNamespace>
     <AssemblyName>Ninja Air Control</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
