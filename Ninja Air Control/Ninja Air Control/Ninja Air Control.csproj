@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aircraft.cs" />
+    <Compile Include="AircraftIdData.cs" />
+    <Compile Include="AircraftType.cs" />
     <Compile Include="Airport.cs" />
     <Compile Include="AirspaceFix.cs" />
     <Compile Include="AirTrafficController.cs" />
