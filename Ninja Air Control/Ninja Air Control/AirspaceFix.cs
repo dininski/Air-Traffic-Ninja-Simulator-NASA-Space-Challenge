@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
+    /// <summary>
+    /// Represents a coordinate in the airspace
+    /// Could be eighter a radio station or a simple navigation point
+    /// Some fixes require Report from pilot to controller, others do not
+    /// </summary>
     public class AirspaceFix
     {
         public AirspaceFix(Position3D coordinates, bool isRadioNavigationalPoint, bool isMandatoryToReport)

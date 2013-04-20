@@ -31,6 +31,9 @@ namespace NinjaAirControl
             this.CurrentHeadingInDegrees = currentHeadingInDegrees;
         }
 
+        /// <summary>
+        /// Method responsible for updating the position of aircraft at a certain time.
+        /// </summary>
         public void UpdatePosition()
         {
             double currentHeadingInRadians = MeasureConverter.ConvertDegreeToRadian(CurrentHeadingInDegrees);

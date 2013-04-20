@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
+    /// <summary>
+    /// Hold data concerning an aircraft
+    /// </summary>
     public struct AircraftIdData
     {
         public string Id { get; private set; }
@@ -17,7 +20,6 @@ namespace NinjaAirControl
         public AircraftIdData(string id, 
             string model, 
             string airline, 
-            FlightType type, 
             string squack, 
             bool hasRvsmEquipment) : this()
         {

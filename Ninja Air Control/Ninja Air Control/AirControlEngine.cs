@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NinjaAirControl
 {
     /// <summary>
-    /// Represents game engine. 
+    /// Represents game engine. Is responsible for running the simulation. 
     /// </summary>
     public class AirControlEngine
     {
