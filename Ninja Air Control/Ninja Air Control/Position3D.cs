@@ -69,5 +69,10 @@ namespace NinjaAirControl
                 this.altitude = value;
             }
         }
+
+        public override string ToString()
+        {
+            return String.Format("Longitude: {0}, Latitude: {1}, Altitude: {2}", this.longitude, this.latitude, this.altitude);
+        }
     }
 }

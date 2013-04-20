@@ -10,11 +10,15 @@ namespace NinjaAirControl
     {
         public string Name { get; private set; }
         public Aircraft Aircraft { get; private set; }
-      
-        public Pilot(string name, Aircraft aircraft)
+
+        public Pilot(string name)
         {
             this.Name = name;
-            this.Aircraft = aircraft;
+        }
+
+        public void SetAircraft(Aircraft pilotedAircraft)
+        {
+            this.Aircraft = pilotedAircraft;
         }
     }
 }
