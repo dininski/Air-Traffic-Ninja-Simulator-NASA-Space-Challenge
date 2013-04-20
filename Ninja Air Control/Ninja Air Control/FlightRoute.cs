@@ -8,8 +8,6 @@ namespace NinjaAirControl
 {
     public class FlightRoute
     {
-        // has:
-        //- a list of AirspaceFix points, which describe the route
         private List<AirspaceFix> route;
 
         public List<AirspaceFix> Route

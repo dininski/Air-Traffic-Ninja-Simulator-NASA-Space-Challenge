@@ -1,0 +1,1 @@
+Our project aims to provide the public with a better understanding of the complex processes that take place in the airspace. We are trying to illustrate the different aspects of the daily routines of air traffic. We are modelling all the participants in the air traffic in a way that is easily-understandable by the general public.

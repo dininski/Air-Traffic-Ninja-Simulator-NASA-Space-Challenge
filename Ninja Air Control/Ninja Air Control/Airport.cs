@@ -56,7 +56,7 @@ namespace NinjaAirControl
         {
             this.Name = name;
             this.Coordinates = coordinates;
-            this.ATC = new List<AirTrafficController>();
+            this.airTrafficController = new List<AirTrafficController>();
             this.Dispatcher = dispatcher;
         }
         // TODO: ADD traffic controller method

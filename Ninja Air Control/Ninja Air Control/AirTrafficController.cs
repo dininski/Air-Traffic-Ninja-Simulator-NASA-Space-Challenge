@@ -8,8 +8,6 @@ namespace NinjaAirControl
 {
     public class AirTrafficController
     {
-        // has:
-        //-TraficControllerType
         private TrafficControllerType controllerType;
 
         public TrafficControllerType ControllerType

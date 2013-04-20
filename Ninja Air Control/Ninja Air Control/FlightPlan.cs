@@ -24,14 +24,6 @@ namespace NinjaAirControl
 
         // TODO: Add method changeArrivalAirport()
         // TODO: Add method recalculateEstimatedArrivalDateTime()
-        // has:
-        //-departure Airport
-        //-time of departure (DateTime)
-        //-arrival Airport
-        //-estimated time of arrival (DateTime)
-        //-flight speed (int)
-        //-flight Route
-        //-flight altitude (int)
         
         public FlightPlan(
             Airport departureAirport,
