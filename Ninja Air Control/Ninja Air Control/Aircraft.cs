@@ -39,9 +39,9 @@ namespace NinjaAirControl
         {
             decimal newLongitude = CurrentPosition.Longitude;
             double currentHeadingInRadians = (Math.PI * CurrentHeadingInDegrees) / 180;
-            newLongitude += (decimal)(Speed / Math.Sin(currentHeadingInRadians));
+            newLongitude += (decimal)(Speed * Math.Sin(currentHeadingInRadians));
             decimal newLatitude = CurrentPosition.Latitude;
-            newLatitude += (decimal)(Speed / Math.Cos(currentHeadingInRadians));
+            newLatitude += (decimal)(Speed * Math.Cos(currentHeadingInRadians));
             this.CurrentPosition = new Position3D(newLongitude, newLatitude, CurrentPosition.Altitude);
         }
         //TODO: Calculate current position method
