@@ -8,18 +8,18 @@ namespace NinjaAirControl
 {
     public class Position3D
     {
-        private double longitude; // x
-        private double latitude; // y
-        private double? altitude; // z
+        private decimal longitude; // x
+        private decimal latitude; // y
+        private decimal? altitude; // z
 
-        public Position3D(double longitude, double latitude, double? altitude = null)
+        public Position3D(decimal longitude, decimal latitude, decimal? altitude = null)
         {
             this.Longitude = longitude;
             this.Latitude = latitude;
             this.Altitude = altitude;
         }
 
-        public double Longitude
+        public decimal Longitude
         {
             get
             {
@@ -36,7 +36,7 @@ namespace NinjaAirControl
             }
         }
 
-        public double Latitude
+        public decimal Latitude
         {
             get
             {
@@ -53,7 +53,7 @@ namespace NinjaAirControl
             }
         }
 
-        public double? Altitude
+        public decimal? Altitude
         {
             get
             {
