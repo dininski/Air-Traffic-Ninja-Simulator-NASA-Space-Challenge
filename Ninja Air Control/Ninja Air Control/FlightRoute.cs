@@ -10,5 +10,29 @@ namespace NinjaAirControl
     {
         // has:
         //- a list of AirspaceFix points, which describe the route
+        private List<AirspaceFix> route;
+
+        public List<AirspaceFix> Route
+        {
+            get
+            {
+                return this.route;
+            }
+            private set
+            {
+                this.route = value;
+            }
+        }
+        
+        public FlightRoute()
+        { 
+            Route = new List<AirspaceFix>();
+        }
+
+        public void AddFix(AirspaceFix newFix)
+        {
+            Route.Add(newFix);
+        }
+        // TODO: Remove ?
     }
 }

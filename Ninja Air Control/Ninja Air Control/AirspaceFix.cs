@@ -20,6 +20,7 @@ namespace NinjaAirControl
         public bool IsMandatoryToReport { get; private set; }
 
         public Position3D Coordinates { get; private set; }
+        
         // has:
         //-Position3D
         //-isRadioNav (bool) - is it a radio navigational point or not

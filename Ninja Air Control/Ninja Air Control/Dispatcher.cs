@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
-    class Dispatcher
+    public class Dispatcher
     {
+        private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            private set
+            {
+                name = value;
+            }
+        }
+
+        public Dispatcher(string name)
+        {
+            this.Name = name;
+        }
     }
 }
