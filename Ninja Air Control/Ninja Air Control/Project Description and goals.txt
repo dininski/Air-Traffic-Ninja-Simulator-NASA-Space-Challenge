@@ -2,3 +2,11 @@
 2. Предполагам не ви се занимава да правим бази данни и тн и при положение,
  че изискването е за малко данни мисля че можем да направим някакъв хардкоднати данни в един клас и ако остане време местим в БД.
 3. Трябва вие да решите какъв ще е проекта защото аз съм работил с WebForms и MVC и не ме вълнува много кое от двете ще правим. //ДИМИТЪР
+
+Някой неща които може да ни помогнат после
+http://stackoverflow.com/questions/1185408/converting-from-longitude-latitude-to-cartesian-coordinates
+http://en.wikipedia.org/wiki/Geographic_coordinate_system
+http://www.gavaghan.org/blog/free-source-code/geodesy-library-vincentys-formula/
+http://ogl-lib.sourceforge.net/
+http://trackviewer.codeplex.com/
+http://www.codeplex.com/site/search?query=GPS&licenses=%7C
