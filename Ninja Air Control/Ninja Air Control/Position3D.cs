@@ -29,7 +29,7 @@ namespace NinjaAirControl
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Latitude cannot be negative.");
+                    throw new ArgumentOutOfRangeException("Longitude cannot be negative.");
                 }
 
                 this.longitude = value;
@@ -63,7 +63,7 @@ namespace NinjaAirControl
             {
                 if (value < 0)
                 { // Aircfraft submarine
-                    throw new ArgumentOutOfRangeException("Latitude cannot be negative.");
+                    throw new ArgumentOutOfRangeException("Altitude cannot be negative.");
                 }
 
                 this.altitude = value;
