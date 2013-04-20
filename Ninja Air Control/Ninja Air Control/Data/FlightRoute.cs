@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using NinjaAirControl.Utils;
 
-namespace NinjaAirControl
+namespace NinjaAirControl.Data
 {
     /// <summary>
     /// Describes a route of an aircraft.
@@ -12,35 +9,33 @@ namespace NinjaAirControl
     /// </summary>
     public class FlightRoute
     {
-        private List<AirspaceFix> route;
+        private List<AirspaceFix> routePoints;
 
         /// <summary>
         /// In order to draw the route on screen we need a list of points. 
         /// Flight are not made on straight line sometimes they go around mountains and other high stuff(towers)
         /// So we need list of point lets say between 2 miles and this list will describe the flight vector
         /// </summary>
-        public List<Position3D> FlightPath { get; set; }
-
-        public List<AirspaceFix> Route
+        public List<AirspaceFix> RoutePoints
         {
             get
             {
-                return this.route;
+                return this.routePoints;
             }
             private set
             {
-                this.route = value;
+                this.routePoints = value;
             }
         }
         
         public FlightRoute()
         { 
-            Route = new List<AirspaceFix>();
+            RoutePoints = new List<AirspaceFix>();
         }
 
         public void AddFix(AirspaceFix newFix)
         {
-            Route.Add(newFix);
+            RoutePoints.Add(newFix);
         }
         // TODO: Remove ?
     }

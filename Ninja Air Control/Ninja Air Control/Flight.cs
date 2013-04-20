@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NinjaAirControl.Data;
+using NinjaAirControl.Utils;
 
 namespace NinjaAirControl
 {
@@ -12,15 +14,27 @@ namespace NinjaAirControl
     /// </summary>
     public class Flight
     {
+        private DateTime lastUpdated; 
+
         public Aircraft Aircraft { get; private set; }
 
-        public Pilot Pilot { get; private set; }
+        public AirTrafficController TrafficController { get; private set; } 
+
+        public Person Pilot { get; private set; }
 
         public FlightPlan FlightPlan { get; private set; }
 
-        public bool IsActive { get; private set; }
+        public bool IsActive { get; private set; }       
+       
+        public Position3D CurrentPosition { get; private set; }
 
-        public Flight(Aircraft aircraft, Pilot pilot, FlightPlan flightPlan)
+        public int CurrentSpeed { get; private set; }
+
+        public int CurrentAltitude { get; set; }
+
+        public int CurrentHeadingInDegrees { get; private set; }     
+
+        public Flight(Aircraft aircraft, Person pilot, FlightPlan flightPlan)
         {
             this.Aircraft = aircraft;
             this.Pilot = pilot;
@@ -32,10 +46,28 @@ namespace NinjaAirControl
         /// </summary>
         public void CheckFlightStatus() 
         {
-            if (this.Aircraft.CurrentPosition.CompareTo(FlightPlan.ArrivalAirport.Coordinates) == 0)
+            if (CurrentPosition.CompareTo(FlightPlan.ArrivalAirport.Coordinates) == 0)
             {
                 IsActive = false;
             }
         }
+
+        /// <summary>
+        /// Method responsible for updating the position of aircraft at a certain time.
+        /// </summary>
+        public void UpdatePosition()
+        {
+            double currentHeadingInRadians = MeasureConverter.ConvertDegreeToRadian(CurrentHeadingInDegrees);
+            decimal newLongitude = CurrentPosition.Longitude;
+            decimal newLatitude = CurrentPosition.Latitude;
+            DateTime currentDateTime = new DateTime();
+            int distanceElapsed = (currentDateTime - lastUpdated).Hours * CurrentSpeed;
+            newLongitude += (decimal)(distanceElapsed * Math.Sin(currentHeadingInRadians));
+            newLatitude += (decimal)(distanceElapsed * Math.Cos(currentHeadingInRadians));
+            this.CurrentPosition = new Position3D(newLongitude, newLatitude, CurrentPosition.Altitude);
+            lastUpdated = currentDateTime;
+        }
+        //TODO: Calculate current position method
+        //TODO: Method that changes the speed
     }
 }

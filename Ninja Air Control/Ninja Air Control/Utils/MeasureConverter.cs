@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NinjaAirControl
+namespace NinjaAirControl.Utils
 {
     /// <summary>
     /// An additional class holding methods for arithmetical operations, 

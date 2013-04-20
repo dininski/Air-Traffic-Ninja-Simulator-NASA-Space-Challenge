@@ -23,5 +23,9 @@ namespace FlightSchedules
 
         public List<PersonInformation> Pilots { get; set; }
 
+        public DateTime DepartureDateTime { get; set; }
+
+        public DateTime EstimatedArrivalDateTime { get; set; }
+
     }
 }

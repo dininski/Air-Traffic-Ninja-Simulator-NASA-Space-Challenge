@@ -42,22 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirControlEngine.cs" />
-    <Compile Include="Aircraft.cs" />
-    <Compile Include="AircraftIdData.cs" />
-    <Compile Include="FlightType.cs" />
-    <Compile Include="Airport.cs" />
-    <Compile Include="AirspaceFix.cs" />
-    <Compile Include="AirTrafficController.cs" />
-    <Compile Include="Dispatcher.cs" />
+    <Compile Include="Data\Aircraft.cs" />
+    <Compile Include="Data\AircraftIdData.cs" />
+    <Compile Include="Data\FlightType.cs" />
+    <Compile Include="Data\Airport.cs" />
+    <Compile Include="Utils\AirspaceFix.cs" />
+    <Compile Include="Data\AirTrafficController.cs" />
+    <Compile Include="Data\Dispatcher.cs" />
     <Compile Include="Flight.cs" />
-    <Compile Include="FlightRoute.cs" />
-    <Compile Include="MeasureConverter.cs" />
-    <Compile Include="Pilot.cs" />
+    <Compile Include="Data\FlightRoute.cs" />
+    <Compile Include="Utils\MeasureConverter.cs" />
     <Compile Include="Position3D.cs" />
     <Compile Include="FlightPlan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrafficControllerType.cs" />
+    <Compile Include="Data\TrafficControllerType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

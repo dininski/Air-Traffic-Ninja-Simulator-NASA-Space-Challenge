@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NinjaAirControl
+﻿namespace NinjaAirControl.Data
 {
-    public class Dispatcher
+    public class Person
     {
         private string name;
 
@@ -22,7 +16,7 @@ namespace NinjaAirControl
             }
         }
 
-        public Dispatcher(string name)
+        public Person(string name)
         {
             this.Name = name;
         }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace NinjaAirControl
+namespace NinjaAirControl.Data
 {
     public class Airport
     {
@@ -38,7 +34,7 @@ namespace NinjaAirControl
             }
         }
 
-        public Dispatcher Dispatcher { get; private set; }
+        public Person Dispatcher { get; private set; }
 
         public int ActiveRunwaysCount
         {
@@ -52,7 +48,7 @@ namespace NinjaAirControl
             }
         }
 
-        public Airport(string name, Position3D coordinates, Dispatcher dispatcher)
+        public Airport(string name, Position3D coordinates, Person dispatcher)
         {
             this.Name = name;
             this.Coordinates = coordinates;
