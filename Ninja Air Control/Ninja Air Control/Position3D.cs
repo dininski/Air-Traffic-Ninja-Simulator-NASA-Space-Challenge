@@ -8,9 +8,14 @@ namespace NinjaAirControl
 {
     public class Position3D : IComparable
     {
+        // longitude, latitude - degrees!
+        // altitde - feet !
+
         private decimal longitude; // x
         private decimal latitude; // y
         private decimal? altitude; // z
+
+        private 
 
         public Position3D(decimal longitude, decimal latitude, decimal? altitude = null)
         {
