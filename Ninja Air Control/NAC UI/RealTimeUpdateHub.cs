@@ -12,33 +12,16 @@ namespace NAC_UI
         private static int _X = 700;
         private static int _Y = 500;
 
-        public void UpdateCoordinates() 
+        public void LoadActivePlanes()
         {
-            Random rand = new Random();
-            _X = _X + rand.Next(-3,3);
-            _Y = _Y + rand.Next(-3,3);
-            var newCoords = new
-            {
-                X = _X,
-                Y = _Y
-            };
-
-            Clients.All.updateCoordinates(JsonConvert.SerializeObject(newCoords));
+            Clients.Caller.LoadActivePlanes(JsonConvert.SerializeObject(MockUpDataSource.Planes));
         }
 
         public static void InvokeGlobalMessage(object dummyObj)
         {
             var context = GlobalHost.ConnectionManager.GetHubContext<RealTimeUpdateHub>();
-            Random rand = new Random();
-            _X = _X + rand.Next(-3, 3);
-            _Y = _Y + rand.Next(-3, 3);
-            var newCoords = new
-            {
-                X = _X,
-                Y = _Y
-            };
 
-            context.Clients.All.updateCoordinates(JsonConvert.SerializeObject(newCoords));
+            context.Clients.All.updateCoordinates(JsonConvert.SerializeObject(MockUpDataSource.GetUpdatedLocations()));
         }
     }
 }

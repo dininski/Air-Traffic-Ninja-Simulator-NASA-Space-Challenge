@@ -20,16 +20,22 @@
         <thead>
             <tr>
                 <td>№</td>
+                <td>Identification</td>
                 <td>Company</td>
                 <td>Destination</td>
+                <td>Speed</td>
+                <td>Altitude</td>
                 <td>Position</td>
             </tr>
         </thead>
         <tbody data-bind="foreach: ActivePlanes">
             <tr>
                 <td data-bind="text: $index() + 1"></td>
+                <td data-bind="text: $data.Id"></td>
                 <td data-bind="text: $data.Airline"></td>
                 <td data-bind="text: $data.Destination"></td>
+                <td data-bind="text: $data.Speed"></td>
+                <td data-bind="text: $data.Z()"></td>
                 <td data-bind="text: $root.GetPosition($data)"></td>
             </tr>
         </tbody>
