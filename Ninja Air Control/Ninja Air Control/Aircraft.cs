@@ -16,5 +16,6 @@ namespace Ninja_Air_Control
         //-has id (string)
         //-has type - military, scheduled, charter, etc. (enum)
         //-hasRVSM (boolean) - used by ConflictDetection
+        //-airline (string)
     }
 }
