@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
-    /// <summary>
-    /// Represents game engine. 
-    /// </summary>
     public class AirControlEngine
     {
         private List<Aircraft> allAircraft;
@@ -16,16 +13,16 @@ namespace NinjaAirControl
 
         public AirControlEngine(List<Aircraft> initialAircraft)
         {
-            this.allAircraft = new List<Aircraft>();
-            this.allAirports = new List<Airport>();
+            allAircraft = new List<Aircraft>();
+            allAirports = new List<Airport>();
         }
 
         public void Start()
         {
-            // while (true)
-            // {
-            // aircrafts update position
-            // }
+            //while (true)
+            //{
+                //aircrafts update position
+            //}
         }
     }
 }
