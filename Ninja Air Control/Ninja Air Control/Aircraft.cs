@@ -37,11 +37,11 @@ namespace NinjaAirControl
 
         public void UpdatePosition()
         {
-            double newLongitude = CurrentPosition.Longitude;
+            decimal newLongitude = CurrentPosition.Longitude;
             double currentHeadingInRadians = (Math.PI * CurrentHeadingInDegrees) / 180;
-            newLongitude += (int)(Speed / Math.Sin(currentHeadingInRadians));
-            double newLatitude = CurrentPosition.Latitude;
-            newLatitude += (int)(Speed / Math.Cos(currentHeadingInRadians));
+            newLongitude += (decimal)(Speed / Math.Sin(currentHeadingInRadians));
+            decimal newLatitude = CurrentPosition.Latitude;
+            newLatitude += (decimal)(Speed / Math.Cos(currentHeadingInRadians));
             this.CurrentPosition = new Position3D(newLongitude, newLatitude, CurrentPosition.Altitude);
         }
         //TODO: Calculate current position method
