@@ -50,6 +50,7 @@
     <Compile Include="AirTrafficController.cs" />
     <Compile Include="Dispatcher.cs" />
     <Compile Include="FlightRoute.cs" />
+    <Compile Include="MeasureConverter.cs" />
     <Compile Include="Pilot.cs" />
     <Compile Include="Position3D.cs" />
     <Compile Include="FlightPlan.cs" />
