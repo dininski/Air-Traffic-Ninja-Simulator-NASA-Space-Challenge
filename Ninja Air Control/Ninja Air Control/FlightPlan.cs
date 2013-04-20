@@ -22,6 +22,8 @@ namespace NinjaAirControl
 
         public int EnRouteAltitude { get; private set; }
 
+        public FlightType Type { get; private set; }
+
         // TODO: Add method changeArrivalAirport()
         // TODO: Add method recalculateEstimatedArrivalDateTime()
         
@@ -32,7 +34,8 @@ namespace NinjaAirControl
             DateTime estimatedArrivalDateTime,
             int preplannedSpeed,
             FlightRoute preplannedRoute,
-            int enRouteAltitude)
+            int enRouteAltitude,
+            FlightType type)
         {
             this.DepartureAirport = departureAirport;
             this.ArrivalAirport = arrivalAirport;
@@ -41,6 +44,7 @@ namespace NinjaAirControl
             this.PreplannedSpeed = preplannedSpeed;
             this.PreplannedRoute = preplannedRoute;
             this.EnRouteAltitude = enRouteAltitude;
+            this.Type = type;
         }
     }
 }

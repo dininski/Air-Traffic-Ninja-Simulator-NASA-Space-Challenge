@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
-    public class Pilot
+    public enum FlightType
     {
-        public string Name { get; private set; }
-
-        public Pilot(string name)
-        {
-            this.Name = name;
-        }
+        Scheduled,
+        Charter,
+        Cargo,
+        Military
     }
 }

@@ -44,11 +44,12 @@
     <Compile Include="AirControlEngine.cs" />
     <Compile Include="Aircraft.cs" />
     <Compile Include="AircraftIdData.cs" />
-    <Compile Include="AircraftType.cs" />
+    <Compile Include="FlightType.cs" />
     <Compile Include="Airport.cs" />
     <Compile Include="AirspaceFix.cs" />
     <Compile Include="AirTrafficController.cs" />
     <Compile Include="Dispatcher.cs" />
+    <Compile Include="Flight.cs" />
     <Compile Include="FlightRoute.cs" />
     <Compile Include="MeasureConverter.cs" />
     <Compile Include="Pilot.cs" />
