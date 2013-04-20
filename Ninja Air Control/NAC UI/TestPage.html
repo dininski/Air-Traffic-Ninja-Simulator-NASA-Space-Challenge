@@ -3,6 +3,8 @@
 <head>
     <title> Ninja Air Control SignalR Test Page </title>
     <link href="Content/TestPage.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <h2> Ninja Air Control SignalR Test Page </h2>
@@ -11,7 +13,31 @@
     <div class="flight-map" data-bind="foreach: ActivePlanes">
         <span class="plane-indicator" data-bind="planePosition: $data"></span>
     </div>
-        
+    
+    
+    <h3> Active Planes </h3>  
+    <table class="plane-data">
+        <thead>
+            <tr>
+                <td>№</td>
+                <td>Company</td>
+                <td>Destination</td>
+                <td>Position</td>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: ActivePlanes">
+            <tr>
+                <td data-bind="text: $index() + 1"></td>
+                <td data-bind="text: $data.Airline"></td>
+                <td data-bind="text: $data.Destination"></td>
+                <td data-bind="text: $root.GetPosition($data)"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- pager will be here-->
+        </tfoot>
+    </table>
+      
 
 
     <script src="Scripts/jquery-1.9.1.min.js"></script>

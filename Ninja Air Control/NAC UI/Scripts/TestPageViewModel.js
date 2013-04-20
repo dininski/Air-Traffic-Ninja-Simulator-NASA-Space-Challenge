@@ -6,13 +6,22 @@
     self.UpdateHub = $.connection.realTimeUpdateHub; // Initialize the signalr update hub
     self.ActivePlanes = ko.observableArray([]); // Container for the active plaines
 
+    // ---------- Utility methods ----------
+    self.GetPosition = function (plane) {
+        return 'X: ' + plane.X() + ' , Y: ' + plane.Y();
+    }
+
+    // ---------- SignalR methods ----------
     // The javascript method called by the SignalR hub for updating plane location
     self.UpdateHub.client.updateCoordinates = function (newLocation) {
         var location = JSON.parse(newLocation);
         self.ActivePlanes()[0].X(location.X);
         self.ActivePlanes()[0].Y(location.Y);
     }
-    
+
+
+    // ---------- Loading and initialization ----------
+    // Initialize custom knockout bindings to the ko object namespace    
     self.InitiCustomBindings = function () {
         ko.bindingHandlers.planePosition = {
             init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
@@ -40,7 +49,6 @@
             }
         };
     }
-
 
     // Run setup and initialization
     self.Initialize = function () {

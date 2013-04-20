@@ -1,6 +1,11 @@
 ﻿body {
+    max-width:1200px;
     margin-left:auto;
     margin-right:auto;
+}
+
+h2, h3 {
+    font-family: Sanchez;
 }
 
 .flight-map {
@@ -18,3 +23,18 @@
     border:6px solid red;
     position:absolute;
 }
+
+.plane-data {
+    width:40%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+    .plane-data thead tr td {
+        background-color: #3D40FF;
+        color: white;
+        text-align: center;
+    }
+
+    .plane-data tbody tr td {
+        text-align: center;
+    }
