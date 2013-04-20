@@ -10,6 +10,7 @@ namespace Ninja_Air_Control
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("TEst");
         }
     }
 }
