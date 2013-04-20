@@ -59,10 +59,7 @@ namespace NinjaAirControl
             this.ATC = new List<AirTrafficController>();
             this.Dispatcher = dispatcher;
         }
-
         // TODO: ADD traffic controller method
-
-
         // has:
         //-AirTrafficController - tower and ground
         //-Dispatcher
