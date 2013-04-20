@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
+    /// <summary>
+    /// Describes a route of an aircraft.
+    /// Holds a list of fixes.
+    /// </summary>
     public class FlightRoute
     {
         private List<AirspaceFix> route;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
+    /// <summary>
+    /// Holds information about the flight
+    /// </summary>
     public class FlightPlan
     {
         public Airport DepartureAirport { get; private set; }

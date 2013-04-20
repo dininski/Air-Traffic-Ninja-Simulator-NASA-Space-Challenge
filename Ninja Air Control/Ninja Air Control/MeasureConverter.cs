@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
+    /// <summary>
+    /// An additional class holding methods for arithmetical operations, 
+    /// that convert one measurement into another
+    /// </summary>
     public static class MeasureConverter
     {
         public static double ConvertDegreeToRadian(double degree) 

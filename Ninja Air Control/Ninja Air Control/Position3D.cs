@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
+    /// <summary>
+    /// Holds position in the 3D space.
+    /// Constructor takes as arguments longitude and altitude as geographic coordinates
+    /// </summary>
     public class Position3D : IComparable
     {
         // longitude, latitude - degrees!
@@ -21,6 +25,11 @@ namespace NinjaAirControl
             this.Altitude = altitude;
         }
 
+        /// <summary>
+        /// Property for getting longitude in Nautical Miles. 
+        /// Center of the coordinate system is point 0,0 that has geographic coordinates 
+        /// -180 degrees longitude and 90 degrees latitude
+        /// </summary>
         public int LongitudeInNauticalMiles
         {
             get
@@ -28,7 +37,12 @@ namespace NinjaAirControl
                 return MeasureConverter.ConvertLongtitudeDegreesToNauticalMiles(this.Longitude);
             }
         }
-        
+
+        /// <summary>
+        /// Property for getting latitude in Nautical Miles. 
+        /// Center of the coordinate system is point 0,0 that has geographic coordinates 
+        /// -180 degrees longitude and 90 degrees latitude
+        /// </summary>
         public int LatitudeInNauticalMiles
         {
             get
