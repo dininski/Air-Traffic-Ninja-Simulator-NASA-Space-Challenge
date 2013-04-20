@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NinjaAirControl
 {
-    public enum TrafficControllerType
+    public enum AircraftType
     {
-        Ground,
-        Tower,
-        Approach,
-        EnRoute
+        Scheduled,
+        Charter,
+        Cargo,
+        Military
     }
 }

@@ -4,9 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ninja_Air_Control
+namespace NinjaAirControl
 {
-    class Dispatcher
+    public class Dispatcher
     {
+        private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            private set
+            {
+                name = value;
+            }
+        }
+
+        public Dispatcher(string name)
+        {
+            this.Name = name;
+        }
     }
 }

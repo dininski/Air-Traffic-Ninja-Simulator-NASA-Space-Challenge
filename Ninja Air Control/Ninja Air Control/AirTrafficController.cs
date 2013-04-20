@@ -4,11 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ninja_Air_Control
+namespace NinjaAirControl
 {
     public class AirTrafficController
     {
-        // has:
-        //-TraficControllerType
+        private TrafficControllerType controllerType;
+
+        public TrafficControllerType ControllerType
+        {
+            get
+            {
+                return controllerType;
+            }
+            private set
+            {
+                controllerType = value;
+            }
+        }
+        
+        public AirTrafficController(TrafficControllerType controllerType)
+        {
+            this.ControllerType = controllerType;
+        }
     }
 }

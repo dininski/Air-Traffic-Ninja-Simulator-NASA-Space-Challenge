@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ninja_Air_Control
+namespace NinjaAirControl
 {
     public class Pilot
     {
-        // has:
-        //-Aircraft
-        //-name (string)
+        public string Name { get; private set; }
+        public Aircraft Aircraft { get; private set; }
+      
+        public Pilot(string name, Aircraft aircraft)
+        {
+            this.Name = name;
+            this.Aircraft = aircraft;
+        }
     }
 }
