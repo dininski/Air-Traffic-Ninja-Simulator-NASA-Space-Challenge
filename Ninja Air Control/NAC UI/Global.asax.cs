@@ -32,16 +32,46 @@ namespace NAC_UI
             timer = new Timer(callback, null, 1000, 1000);
         }
 
-        private void FlightsProcessorOnApproachingBadWeather(object sender, FlightEventArgs flightEventArgs)
+        private void FlightsProcessorOnApproachingBadWeather(object sender, FlightEventArgs e)
         {
             //throw new NotImplementedException();
             //TODO Send the data to interface
+            switch (e.WarningLevel)
+            {
+                case WarningLevel.Normal:
+                    //DO nothing we will try to process this one
+                    break;
+                case WarningLevel.High:
+                    RealTimeUpdateHub.InvokeGlobalMessageForBadWeather(e.Flights[0], e.WarningLevel);
+                    break;
+                case WarningLevel.Critical:
+                    RealTimeUpdateHub.InvokeGlobalMessageForBadWeather(e.Flights[0], e.WarningLevel);
+                    break;
+                default:
+                    RealTimeUpdateHub.InvokeGlobalMessageForBadWeather(e.Flights[0], e.WarningLevel);
+                    break;
+            }            
         }
 
         void FlightsProcessor_PossibleCollision(object sender, NinjaAirControl.Processing.FlightEventArgs e)
         {
             //throw new NotImplementedException();
             //TODO Send the data to interface
+            switch (e.WarningLevel)
+            {
+                case WarningLevel.Normal:
+                    //DO nothing we will try to process this one
+                    break;
+                case WarningLevel.High:
+                    RealTimeUpdateHub.InvokeGlobalMessageForCollision(e.Flights[0], e.Flights[1], e.WarningLevel);
+                    break;
+                case WarningLevel.Critical:
+                    RealTimeUpdateHub.InvokeGlobalMessageForCollision(e.Flights[0], e.Flights[1], e.WarningLevel);
+                    break;
+                default:
+                    RealTimeUpdateHub.InvokeGlobalMessageForCollision(e.Flights[0], e.Flights[1], e.WarningLevel);
+                    break;
+            }
         }
 
         protected void Session_Start(object sender, EventArgs e)

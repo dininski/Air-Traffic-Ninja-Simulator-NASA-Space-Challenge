@@ -117,6 +117,7 @@ namespace NinjaAirControl.Processing
             }
             else
             {
+                RaiseOnApproachingBadWeather(flight, WarningLevel.High);
                 return false;
             }            
         }        
@@ -133,6 +134,7 @@ namespace NinjaAirControl.Processing
             }
             else
             {
+                RaiseOnPossibleCollision(flight, flight2, WarningLevel.High);
                 return false;
             }
         }

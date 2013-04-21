@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using NAC_UI.Flights;
 using Newtonsoft.Json;
+using NinjaAirControl;
+using NinjaAirControl.Processing;
 
 namespace NAC_UI
 {
@@ -26,6 +28,23 @@ namespace NAC_UI
 
             //TODO This method will get all current flights and check for collisions and weather conditions
             Globals.FlightsProcessor.ProcessCurrentFlights();
+        }
+
+        public static void InvokeGlobalMessageForCollision(Flight flight, Flight flight2, WarningLevel level)
+        {
+            var context = GlobalHost.ConnectionManager.GetHubContext<RealTimeUpdateHub>();
+
+            context.Clients.All.sendCollisionWarning(JsonConvert.SerializeObject(flight),
+                JsonConvert.SerializeObject(flight2), 
+                JsonConvert.SerializeObject(level.ToString()));
+        }
+
+        public static void InvokeGlobalMessageForBadWeather(Flight flight, WarningLevel level)
+        {
+            var context = GlobalHost.ConnectionManager.GetHubContext<RealTimeUpdateHub>();
+
+            context.Clients.All.sendCollisionWarning(JsonConvert.SerializeObject(flight),                
+                JsonConvert.SerializeObject(level.ToString()));
         }
     }
 }
