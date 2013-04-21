@@ -47,6 +47,9 @@
     <Compile Include="Data\AircraftIdData.cs" />
     <Compile Include="Data\FlightType.cs" />
     <Compile Include="Data\Airport.cs" />
+    <Compile Include="Processing\Constants.cs" />
+    <Compile Include="Processing\FlightEventArgs.cs" />
+    <Compile Include="Processing\FlightProcessor.cs" />
     <Compile Include="Utils\AirspaceFix.cs" />
     <Compile Include="Data\AirTrafficController.cs" />
     <Compile Include="Data\Person.cs" />
