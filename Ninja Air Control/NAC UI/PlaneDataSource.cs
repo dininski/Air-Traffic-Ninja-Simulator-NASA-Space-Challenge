@@ -55,8 +55,8 @@ namespace NAC_UI
             Airports.Add(new
             {
                 Id = "1",
-                X = jfk.Coordinates.LatitudeInNauticalMiles/18,
-                Y = jfk.Coordinates.LongitudeInNauticalMiles/18,
+                X = jfk.Coordinates.LongitudeInNauticalMiles / 18,
+                Y = jfk.Coordinates.LatitudeInNauticalMiles / 18,
                 City = "NY",
                 @Airport = jfk.Name
             });
