@@ -22,6 +22,11 @@ h2, h3 {
     padding:9px;
 }
 
+.plane-route {
+    position:absolute;
+    border:1px solid red;
+}
+
 .airport-indicator {
     background:url(/Content/airport_terminal.png) no-repeat center;
     position:absolute;
@@ -29,7 +34,7 @@ h2, h3 {
 }
 
 .plane-data {
-    width:60%;
+    width:70%;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -39,9 +44,18 @@ h2, h3 {
         text-align: center;
     }
 
+    .plane-data tbody tr:hover {
+        /*background-color: #72E9FF;*/
+        cursor:pointer;
+        background-color:#404040;
+        color:white;
+    }
+
     .plane-data tbody tr td {
         text-align: center;
     }
+
+
 
     .plane-data thead tr td:last-child {
         min-width: 120px;

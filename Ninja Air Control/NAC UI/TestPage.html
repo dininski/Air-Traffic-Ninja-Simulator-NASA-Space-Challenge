@@ -12,7 +12,9 @@
     <!--Container with the map and the flying panes-->
     <div class="flight-map" >
         <!-- ko foreach: ActivePlanes -->
-        <span class="plane-indicator" data-bind="planePosition: $data"></span>
+        <span class="plane-indicator" data-bind="planePosition: $data">
+        </span>
+        <!--<span class="plane-route" data-bind="flightRoute: $data"></span>-->
         <!-- /ko -->
 
         <!-- ko foreach: ActiveAirports -->

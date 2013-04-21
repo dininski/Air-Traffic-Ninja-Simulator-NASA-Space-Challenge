@@ -12,6 +12,7 @@
         return 'X: ' + plane.X() + ' , Y: ' + plane.Y();
     }
 
+    // Applies changes to the position of an airplane
     self.UpdateAirplane = function (newLocation) {
         for (var i = 0; i < self.ActivePlanes().length; i++) {
             if (newLocation.Id == self.ActivePlanes()[i].Id) {
@@ -21,6 +22,33 @@
             }
         }
     }
+
+    // Get the plane's destination display name
+    self.GetDestinationName = function (airportId) {
+        var result = 'No airport available';
+        for (var i = 0; i < self.ActiveAirports().length; i++) {
+            if (self.ActiveAirports()[i].Id == airportId) {
+                result = self.ActiveAirports()[i].City + ', ' + self.ActiveAirports()[i].Airport;
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    // Retrieve Airport object by his Id
+    self.GetAirportById = function (airportId) {
+        var result = {};
+        for (var i = 0; i < self.ActiveAirports().length; i++) {
+            if (self.ActiveAirports()[i].Id == airportId) {
+                result = self.ActiveAirports()[i];
+                break;
+            }
+        }
+
+        return result
+    }
+    // -------------------------------------
 
 
     // ---------- SignalR methods ----------
@@ -34,23 +62,26 @@
 
     // Load Initial data for airplanes
     self.UpdateHub.client.LoadActivePlanesAndAirports = function (planes, airports) {
+        var activeAirports = JSON.parse(airports);
+        self.ActiveAirports(activeAirports);
+
         var activePlanes = JSON.parse(planes);
         for (var i = 0; i < activePlanes.length; i++) {
             self.ActivePlanes.push({
-                Id : activePlanes[i].Identification,
-                Speed : activePlanes[i].Speed,
-                X : ko.observable(activePlanes[i].X),
-                Y : ko.observable(activePlanes[i].Y),
-                Z : ko.observable(activePlanes[i].Z),
-                Airline : activePlanes[i].Company,
-                Destination : activePlanes[i].Destination,
+                Id: activePlanes[i].Identification,
+                Speed: activePlanes[i].Speed,
+                X: ko.observable(activePlanes[i].X),
+                Y: ko.observable(activePlanes[i].Y),
+                Z: ko.observable(activePlanes[i].Z),
+                Airline: activePlanes[i].Company,
+                AirportId: activePlanes[i].Destination,
+                Destination: self.GetDestinationName(activePlanes[i].Destination),
                 Type: activePlanes[i].Type
             });
         }
-
-        var activeAirports = JSON.parse(airports);
-        self.ActiveAirports(activeAirports);
     }
+    // --------------------------------------
+
 
     // ---------- Loading and initialization ----------
     // Initialize custom knockout bindings to the ko object namespace    
@@ -94,6 +125,43 @@
             update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
             }
         };
+
+        // Line connecting airplane and airport
+        ko.bindingHandlers.flightRoute = {
+            init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                var $element = $(element);
+                var planeObj = valueAccessor();
+
+                $element.css('top', planeObj.Y());
+                $element.css('left', planeObj.X());
+
+                var airport = self.GetAirportById(planeObj.Destination);
+
+                var length = Math.sqrt((planeObj.X() - airport.X) * (planeObj.X() - airport.X) + (planeObj.Y() - airport.Y) * (planeObj.Y() - airport.Y))
+                $element.css('width', length + 'px');
+
+                var angle = Math.atan2(airport.Y - planeObj.Y(), airport.X - planeObj.X()) * 180 / Math.PI;
+                $element.css('transform', 'rotate(' + angle + 'deg)');
+            },
+            update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                var $element = $(element);
+                var planeObj = valueAccessor();
+
+                $element.css('top', planeObj.Y());
+                $element.css('left', planeObj.X());
+
+                $element.css('transform-origin', planeObj.X() + 'px ' + planeObj.Y() + 'px');
+
+                var airport = self.GetAirportById(planeObj.AirportId);
+
+                var length = Math.sqrt((planeObj.X() - airport.X) * (planeObj.X() - airport.X) + (planeObj.Y() - airport.Y) * (planeObj.Y() - airport.Y))
+                $element.css('width', length + 'px');
+
+                var angle = Math.atan2(airport.Y - planeObj.Y(), airport.X - planeObj.X()) * 180 / Math.PI;
+                $element.css('transform', 'rotate(' + angle + 'deg)');
+            }
+        };
+
     }
 
     self.LoadActivePlanes = function () {
@@ -109,6 +177,9 @@
 
         $.connection.hub.start().done(self.LoadActivePlanes); // Open connection and load active planes
     }
+    // -------------------------------------
+
+
 
     self.Initialize();
 })

@@ -33,6 +33,7 @@ namespace NAC_UI
             testRoute.AddFix(secondFix);
             FlightPlan testFlightPlan = new FlightPlan(testDepartureAirport, testArrivalAirport, DateTime.Now, DateTime.Now.AddMinutes(30), 200, testRoute, 10000, FlightType.Scheduled);
             Flight testFlight = new Flight(testAirplane, new Person("Pesho"), testFlightPlan, "2213");
+            flights.Add(testFlight);
 
             Planes.Add(new Plane
             {

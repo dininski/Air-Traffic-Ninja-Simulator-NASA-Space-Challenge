@@ -25,7 +25,7 @@ namespace NAC_UI
                 Y = 200,
                 Z = 20000,
                 Company = "Pacific Airlines",
-                Destination = "Chicago",
+                Destination = 1,
                 Type = 1
             });
 
@@ -37,7 +37,7 @@ namespace NAC_UI
                 Y = 120,
                 Z = 18000,
                 Company = "Bulgaria Air",
-                Destination = "Pernik",
+                Destination = 1,
                 Type = 2
             });
 
@@ -49,7 +49,7 @@ namespace NAC_UI
                 Y = 300,
                 Z = 10000,
                 Company = "Pacific Airlines",
-                Destination = "Los Angeles",
+                Destination = 2,
                 Type = 1
             });
 
@@ -61,7 +61,7 @@ namespace NAC_UI
                 Y = 120,
                 Z = 33000,
                 Company = "Air France",
-                Destination = "Veracruz",
+                Destination = 4,
                 Type = 2
             });
 
@@ -73,14 +73,15 @@ namespace NAC_UI
                 Y = 534,
                 Z = 24000,
                 Company = "Emirates",
-                Destination = "Dubai",
+                Destination = 3,
                 Type = 3
             });
         }
 
         private static void FillAirports() 
         {
-            Airports.Add(new { 
+            Airports.Add(new {
+                Id = 1,
                 X = 303,
                 Y = 161,
                 City = "Chicago",
@@ -89,6 +90,7 @@ namespace NAC_UI
 
             Airports.Add(new
             {
+                Id = 2,
                 X = 642,
                 Y = 157,
                 City = "Rome",
@@ -97,6 +99,7 @@ namespace NAC_UI
 
             Airports.Add(new
             {
+                Id = 3,
                 X = 1063,
                 Y = 179,
                 City = "Tokyo",
@@ -105,6 +108,7 @@ namespace NAC_UI
 
             Airports.Add(new
             {
+                Id = 4,
                 X = 452,
                 Y = 377,
                 City = "Rio de Janeiro",
@@ -119,8 +123,8 @@ namespace NAC_UI
             
             foreach (Plane plane in Planes)
 	        {
-                plane.X += random.Next(-2, 2);
-                plane.Y += random.Next(-1, 1);
+                plane.X += random.Next(-2, 3);
+                plane.Y += random.Next(-1, 2);
                 plane.Z += random.Next(-1000, 1000);
 
                 newLocations.Add(new { 
@@ -142,7 +146,7 @@ namespace NAC_UI
             public int Y {get; set;}
             public int Z {get; set;}
             public string Company {get; set;}
-            public string Destination {get; set;}
+            public int Destination {get; set;}
             public int Type { get; set; }
         }      
 
