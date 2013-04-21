@@ -32,9 +32,6 @@ namespace NinjaAirControl
                 System.Threading.Thread.Sleep(3000);
             }
             
-            //AirControlEngine engine = new AirControlEngine();
-            //engine.Start();
-
         }
     }
 }

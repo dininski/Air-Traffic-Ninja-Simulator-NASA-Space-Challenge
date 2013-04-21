@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirControlEngine.cs" />
     <Compile Include="ConflictDetector.cs" />
     <Compile Include="Data\Aircraft.cs" />
     <Compile Include="Data\AircraftIdData.cs" />
