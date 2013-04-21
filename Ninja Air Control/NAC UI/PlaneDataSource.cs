@@ -25,9 +25,9 @@ namespace NAC_UI
         {
             Aircraft testAirplane = new Aircraft(new AircraftIdData("K7H570BG", "Boeing 737", "Ninja Air", true), 200);
             Airport testDepartureAirport = new Airport("John F. Kennedy International Airport", new Position3D(-90.9187999m, 46.5482781m, 251), new Person("John Kennedy"));
-            Airport testArrivalAirport = new Airport("John F. Kennedy International Airport", new Position3D(-90.9187999m, 46.5482781m, 251), new Person("John Kennedy"));
-            AirspaceFix firstFix = new AirspaceFix(new Position3D(-89.9187999m, 46.5482781m, 251), false, false);
-            AirspaceFix secondFix = new AirspaceFix(new Position3D(-88.9187999m, 46.5482781m, 251), false, false);
+            Airport testArrivalAirport = new Airport("Saranak Lake Airport", new Position3D(-74.1m, 44.2m, 251), new Person("Whinston Churchill"));
+            AirspaceFix firstFix = new AirspaceFix(new Position3D(-87.9187999m, 44.5482781m, 251), false, false);
+            AirspaceFix secondFix = new AirspaceFix(new Position3D(-84.9187999m, 45.5482781m, 251), false, false);
             FlightRoute testRoute = new FlightRoute();
             testRoute.AddFix(firstFix);
             testRoute.AddFix(secondFix);
@@ -61,6 +61,16 @@ namespace NAC_UI
                 @Airport = jfk.Name
             });
 
+            Airport slk = new Airport("Saranak Lake Airport", new Position3D(-74.1m, 44.2m, 251), new Person("Whinston Churchill"));
+
+            Airports.Add(new
+            {
+                Id = "1",
+                X = slk.Coordinates.LongitudeInNauticalMiles / 18,
+                Y = slk.Coordinates.LatitudeInNauticalMiles / 18,
+                City = "NY",
+                @Airport = slk.Name
+            });
             //Airports.Add(new
             //{
             //    X = 452,
