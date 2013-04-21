@@ -13,6 +13,11 @@ namespace NinjaAirControl.Utils
             return (Math.PI * degree) / 180;
         }
         
+        public static double ConvertRadiansToDegrees(double radians)
+        {
+            return 180 * radians / Math.PI;
+        }
+
         public static int ConvertLongtitudeDegreesToNauticalMiles(decimal longitude)
         {
             int longitudeMax = 180;

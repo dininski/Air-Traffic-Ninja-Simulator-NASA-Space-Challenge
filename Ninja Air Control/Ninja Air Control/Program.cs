@@ -12,6 +12,8 @@ namespace NinjaAirControl
     {
         static void Main(string[] args)
         {
+            Console.WriteLine((Math.Sin(MeasureConverter.ConvertDegreeToRadian(210))));
+            Console.WriteLine(MeasureConverter.ConvertRadiansToDegrees(Math.Asin(-0.5)));
             AircraftIdData testData = new AircraftIdData();
             //AirTrafficController testController = new AirTrafficController(TrafficControllerType.Approach);
             var testPilot = new Person("ivan");

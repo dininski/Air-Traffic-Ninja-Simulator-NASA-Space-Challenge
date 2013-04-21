@@ -79,7 +79,21 @@ namespace NinjaAirControl
 
         public int CalculateCurrentHeading(Position3D nextPosition)
         {
-            return 0;
+            int updatedHeading=0;
+            if (CurrentPosition.Longitude<nextPosition.Longitude)
+            {
+                double longitudeDifference=(CurrentPosition.LongitudeInNauticalMiles-nextPosition.LongitudeInNauticalMiles);
+                double latitudeDifference = (CurrentPosition.LatitudeInNauticalMiles - nextPosition.LatitudeInNauticalMiles);
+                double distanceBetweenPoints = Math.Sqrt(longitudeDifference*longitudeDifference+latitudeDifference*latitudeDifference);
+                updatedHeading = (int)MeasureConverter.ConvertRadiansToDegrees((
+                        Math.Asin(Math.Abs(longitudeDifference) / distanceBetweenPoints)));
+                if (longitudeDifference>0)
+                {
+                    updatedHeading=updatedHeading + 180;
+                }
+            }
+
+            return updatedHeading;
         }
     }
 }
