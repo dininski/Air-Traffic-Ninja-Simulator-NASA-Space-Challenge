@@ -56,9 +56,5 @@ namespace NinjaAirControl.Data
             this.Dispatcher = dispatcher;
         }
         // TODO: ADD traffic controller method
-        // has:
-        //-AirTrafficController - tower and ground
-        //-Dispatcher
-        //-number of active runways (int)
     }
 }

@@ -98,7 +98,8 @@ namespace NinjaAirControl
             private set
             {
                 if (value < 0)
-                { // Aircfraft submarine
+                { 
+                    // Aircfraft submarine
                     throw new ArgumentOutOfRangeException("Altitude cannot be negative.");
                 }
 
