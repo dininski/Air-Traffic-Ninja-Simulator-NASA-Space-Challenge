@@ -43,6 +43,7 @@ namespace NinjaAirControl
             this.FlightPlan = flightPlan;
             this.Squack = squack;
             this.IsActive = true;
+            this.CurrentPosition = flightPlan.DepartureAirport.Coordinates; //set first position to be equal to the departure airport
         }
         /// <summary>
         /// Checks status of flight and sets the IsActive property
