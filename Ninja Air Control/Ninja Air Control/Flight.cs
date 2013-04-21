@@ -44,7 +44,10 @@ namespace NinjaAirControl
             this.Squack = squack;
             this.IsActive = true;
             this.CurrentPosition = flightPlan.DepartureAirport.Coordinates; //set first position to be equal to the departure airport
+            this.CurrentSpeed = flightPlan.PreplannedSpeed;
+            this.lastUpdated = DateTime.Now;
         }
+
         /// <summary>
         /// Checks status of flight and sets the IsActive property
         /// </summary>
@@ -64,8 +67,9 @@ namespace NinjaAirControl
             double currentHeadingInRadians = MeasureConverter.ConvertDegreeToRadian(CurrentHeadingInDegrees);
             decimal newLongitude = CurrentPosition.Longitude;
             decimal newLatitude = CurrentPosition.Latitude;
-            DateTime currentDateTime = new DateTime();
-            int distanceElapsed = (currentDateTime - lastUpdated).Hours * CurrentSpeed;
+            DateTime currentDateTime = DateTime.Now;
+            double secondsElapsed = (currentDateTime - lastUpdated).Seconds;
+            double distanceElapsed = secondsElapsed * CurrentSpeed / 3600; // to convert NM/h to NM/s
             newLongitude += (decimal)(distanceElapsed * Math.Sin(currentHeadingInRadians));
             newLatitude += (decimal)(distanceElapsed * Math.Cos(currentHeadingInRadians));
             this.CurrentPosition = new Position3D(newLongitude, newLatitude, CurrentPosition.Altitude);

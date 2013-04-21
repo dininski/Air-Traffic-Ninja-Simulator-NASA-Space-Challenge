@@ -49,7 +49,7 @@
     <Compile Include="Data\Airport.cs" />
     <Compile Include="Utils\AirspaceFix.cs" />
     <Compile Include="Data\AirTrafficController.cs" />
-    <Compile Include="Data\Dispatcher.cs" />
+    <Compile Include="Data\Person.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="Data\FlightRoute.cs" />
     <Compile Include="Utils\MeasureConverter.cs" />
