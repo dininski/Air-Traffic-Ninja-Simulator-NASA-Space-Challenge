@@ -14,14 +14,14 @@ namespace NAC_UI
 
         public void LoadActivePlanes()
         {
-            Clients.Caller.LoadActivePlanesAndAirports(JsonConvert.SerializeObject(MockUpDataSource.Planes), JsonConvert.SerializeObject(MockUpDataSource.Airports));
+            Clients.Caller.LoadActivePlanesAndAirports(JsonConvert.SerializeObject(PlaneDataSource.Planes), JsonConvert.SerializeObject(PlaneDataSource.Airports));
         }
 
         public static void InvokeGlobalMessage(object dummyObj)
         {
             var context = GlobalHost.ConnectionManager.GetHubContext<RealTimeUpdateHub>();
 
-            context.Clients.All.updateCoordinates(JsonConvert.SerializeObject(MockUpDataSource.GetUpdatedLocations()));
+            context.Clients.All.updateCoordinates(JsonConvert.SerializeObject(PlaneDataSource.GetUpdatedLocations()));
         }
     }
 }

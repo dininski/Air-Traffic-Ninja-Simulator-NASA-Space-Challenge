@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using NinjaAirControl;
 using NinjaAirControl.Data;
+using NinjaAirControl.Utils;
 
 namespace NAC_UI
 {
@@ -22,17 +23,26 @@ namespace NAC_UI
 
         private static void FillPlanes()
         {
-
+            Aircraft testAirplane = new Aircraft(new AircraftIdData("K7H570BG", "Boeing 737", "Ninja Air", true), 200);
+            Airport testDepartureAirport = new Airport("John F. Kennedy International Airport", new Position3D(-90.9187999m, 46.5482781m, 251), new Person("John Kennedy"));
+            Airport testArrivalAirport = new Airport("John F. Kennedy International Airport", new Position3D(-90.9187999m, 46.5482781m, 251), new Person("John Kennedy"));
+            AirspaceFix firstFix = new AirspaceFix(new Position3D(-89.9187999m, 46.5482781m, 251), false, false);
+            AirspaceFix secondFix = new AirspaceFix(new Position3D(-88.9187999m, 46.5482781m, 251), false, false);
+            FlightRoute testRoute = new FlightRoute();
+            testRoute.AddFix(firstFix);
+            testRoute.AddFix(secondFix);
+            FlightPlan testFlightPlan = new FlightPlan(testDepartureAirport, testArrivalAirport, DateTime.Now, DateTime.Now.AddMinutes(30), 200, testRoute, 10000, FlightType.Scheduled);
+            Flight testFlight = new Flight(testAirplane, new Person("Pesho"), testFlightPlan, "2213");
 
             Planes.Add(new Plane
             {
-                Identification = "K7H570BG",
-                Speed = 2000,
-                X = 300,
-                Y = 200,
-                Z = 20000,
+                Identification = testFlight.Aircraft.Identification.Id,
+                Speed = testFlight.CurrentSpeed,
+                X = testFlight.CurrentPosition.LongitudeInNauticalMiles/18,
+                Y = testFlight.CurrentPosition.LatitudeInNauticalMiles/18,
+                Z = (int)testFlight.CurrentPosition.Altitude,
                 Company = "Pacific Airlines",
-                Destination = "Chicago",
+                Destination = testFlight.FlightPlan.ArrivalAirport.Name,
                 Type = 1
             });
         }
@@ -66,8 +76,8 @@ namespace NAC_UI
             {
                 flight.UpdatePosition();
                 Plane plane = new Plane();
-                plane.X = (int)(flight.CurrentPosition.LongitudeInNauticalMiles/18);
-                plane.Y = (int)(flight.CurrentPosition.LatitudeInNauticalMiles/18);
+                plane.X = flight.CurrentPosition.LongitudeInNauticalMiles/18;
+                plane.Y = flight.CurrentPosition.LatitudeInNauticalMiles/18;
                 plane.Z = (int)(flight.CurrentPosition.Altitude);
 
                 newLocations.Add(new
