@@ -23,7 +23,8 @@ namespace NinjaAirControl
 
         public virtual void InitializeSimultion()
         {
-            
+            Airport newAirport=new Airport("John F. Kennedy International Airport", new Position3D( -90.9187999m,46.5482781m,251),new Person("John Kennedy"));
+            allAirports.Add(newAirport);
         }
 
         public virtual void Start()
