@@ -35,54 +35,6 @@ namespace NAC_UI
                 Destination = "Chicago",
                 Type = 1
             });
-
-            Planes.Add(new Plane
-            {
-                Identification = "LZ775GTH",
-                Speed = 2200,
-                X = 530,
-                Y = 120,
-                Z = 18000,
-                Company = "Bulgaria Air",
-                Destination = "Pernik",
-                Type = 2
-            });
-
-            Planes.Add(new Plane
-            {
-                Identification = "BB23FK17",
-                Speed = 2000,
-                X = 1000,
-                Y = 300,
-                Z = 10000,
-                Company = "Pacific Airlines",
-                Destination = "Los Angeles",
-                Type = 1
-            });
-
-            Planes.Add(new Plane
-            {
-                Identification = "JK2140MM",
-                Speed = 1600,
-                X = 740,
-                Y = 120,
-                Z = 33000,
-                Company = "Air France",
-                Destination = "Veracruz",
-                Type = 2
-            });
-
-            Planes.Add(new Plane
-            {
-                Identification = "BS2314RK",
-                Speed = 3000,
-                X = 100,
-                Y = 534,
-                Z = 24000,
-                Company = "Emirates",
-                Destination = "Dubai",
-                Type = 3
-            });
         }
 
         private static void FillAirports()
@@ -91,27 +43,11 @@ namespace NAC_UI
 
             Airports.Add(new
             {
-                X = jfk.Coordinates.LatitudeInNauticalMiles,
-                Y = jfk.Coordinates.LongitudeInNauticalMiles,
+                X = jfk.Coordinates.LatitudeInNauticalMiles/18,
+                Y = jfk.Coordinates.LongitudeInNauticalMiles/18,
                 City = "NY",
                 @Airport = jfk.Name
             });
-
-            //Airports.Add(new
-            //{
-            //    X = 642,
-            //    Y = 157,
-            //    City = "Rome",
-            //    @Airport = "Ciampino Airport"
-            //});
-
-            //Airports.Add(new
-            //{
-            //    X = 1063,
-            //    Y = 179,
-            //    City = "Tokyo",
-            //    @Airport = "Haneda Airport"
-            //});
 
             //Airports.Add(new
             //{
@@ -125,20 +61,21 @@ namespace NAC_UI
         public static List<object> GetUpdatedLocations()
         {
             List<object> newLocations = new List<object>();
-            Random random = new Random();
 
-            foreach (Plane plane in Planes)
+            foreach (Flight flight in flights)
             {
-                plane.X += random.Next(-2, 2);
-                plane.Y += random.Next(-1, 1);
-                plane.Z += random.Next(-1000, 1000);
+                flight.UpdatePosition();
+                Plane plane = new Plane();
+                plane.X = (int)(flight.CurrentPosition.LongitudeInNauticalMiles/18);
+                plane.Y = (int)(flight.CurrentPosition.LatitudeInNauticalMiles/18);
+                plane.Z = (int)(flight.CurrentPosition.Altitude);
 
                 newLocations.Add(new
                 {
                     X = plane.X,
                     Y = plane.Y,
                     Z = plane.Z,
-                    Id = plane.Identification
+                    Id = flight.Aircraft.Identification.Id
                 });
             }
 
