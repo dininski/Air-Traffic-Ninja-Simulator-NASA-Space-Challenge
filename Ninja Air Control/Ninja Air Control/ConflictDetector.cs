@@ -72,11 +72,10 @@ namespace NinjaAirControl
             if (firstFlight.TrafficController.ControllerType== Data.TrafficControllerType.Approach ||
                 secondFlight.TrafficController.ControllerType== Data.TrafficControllerType.Approach)
             {
-                return 3m;
+                return 3;
             }
-            else
             {
-                return 5m;
+                return 5;
             }
         }
   
