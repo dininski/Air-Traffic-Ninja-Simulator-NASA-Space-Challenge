@@ -65,6 +65,9 @@ namespace NinjaAirControl.Processing
 
         private void ProcessCurrentFlights(IEnumerable<Flight> flights)
         {
+            if (flights == null)
+                return;
+
             var currentFlights = flights.OrderBy(x => x.CurrentPosition).ToArray();
 
             for (int i = 0; i< currentFlights.Count(); i++)
