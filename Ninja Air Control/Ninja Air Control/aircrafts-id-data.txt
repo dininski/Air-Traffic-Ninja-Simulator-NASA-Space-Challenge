@@ -1,0 +1,42 @@
+Id = TUS830
+Model = Boeing 767-316F
+Airline = ABSA Cargo Airline
+Squack = 4562
+HasRvsmEquipment = true
+
+Id = RUN118
+Model = Airbus A300B4-200F
+Airline = Cargo ACT Airlines
+Squack = 5623
+HasRvsmEquipment = true
+
+Id = AFL1802
+Model = Sukhoi Superjet 100-95Â
+Airline = Aeroflot Russian Airlines
+Squack = 1274
+HasRvsmEquipment = true
+
+Id = ACA405
+Model = Embraer 175
+Airline = Air Canada
+Squack = 5423
+HasRvsmEquipment = true
+
+Id = ATN322
+Model = Douglas DC-8-60	
+Airline = Air Transport International
+Squack = 2319
+HasRvsmEquipment = false
+
+Id = KLM486
+Model = Airbus A310-200
+Airline = KLM Royal Dutch Airlines
+Squack = 8423
+HasRvsmEquipment = true
+
+
+Id = KFS139
+Model = Boeing 727-200 Freighner
+Airline = Kallita Charters
+Squack = 2573
+HasRvsmEquipment = false

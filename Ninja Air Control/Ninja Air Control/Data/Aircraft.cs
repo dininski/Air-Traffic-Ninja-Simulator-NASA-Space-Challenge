@@ -18,7 +18,5 @@
             this.Identification = identification;
             this.MaximumSpeed = speed;
         }
-
-        
     }
 }
