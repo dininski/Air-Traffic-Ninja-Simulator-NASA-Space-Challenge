@@ -27,7 +27,7 @@ namespace NinjaAirControl
         }
 
         /// <summary>
-        /// Property for getting longitude in Nautical Miles. 
+        /// Gets or Sets longitude in Nautical Miles. 
         /// Center of the coordinate system is point 0,0 that has geographic coordinates 
         /// -180 degrees longitude and 90 degrees latitude
         /// </summary>
@@ -40,7 +40,7 @@ namespace NinjaAirControl
         }
 
         /// <summary>
-        /// Property for getting latitude in Nautical Miles. 
+        /// Gets or Sets latitude in Nautical Miles. 
         /// Center of the coordinate system is point 0,0 that has geographic coordinates 
         /// -180 degrees longitude and 90 degrees latitude
         /// </summary>
@@ -61,11 +61,6 @@ namespace NinjaAirControl
 
             private set
             {
-                //if (value < 0)
-                //{
-                //    throw new ArgumentOutOfRangeException("Longitude cannot be negative.");
-                //}
-
                 this.longitude = value;
             }
         }
@@ -79,11 +74,6 @@ namespace NinjaAirControl
 
             private set
             {
-                //if (value < 0)
-                //{
-                //    throw new ArgumentOutOfRangeException("Latitude cannot be negative.");
-                //}
-
                 this.latitude = value;
             }
         }
@@ -97,12 +87,6 @@ namespace NinjaAirControl
 
             private set
             {
-                //if (value < 0)
-                //{ 
-                //    // Aircfraft submarine
-                //    throw new ArgumentOutOfRangeException("Altitude cannot be negative.");
-                //}
-
                 this.altitude = value;
             }
         }
