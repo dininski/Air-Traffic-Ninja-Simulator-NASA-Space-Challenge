@@ -21,12 +21,13 @@ namespace NinjaAirControl
             this.allAirports = new List<Airport>();
         }
 
-        public void Start()
+        public virtual void InitializeSimultion()
         {
-            // while (true)
-            // {
-            // aircrafts update position
-            // }
+            
+        }
+
+        public virtual void Start()
+        {
         }
     }
 }

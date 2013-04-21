@@ -40,10 +40,10 @@ namespace NinjaAirControl
                     decimal minVerticalSeparation = FindMinimalVerticalSeparation(flightCountInner, flightCountOuter);
                     if (Math.Abs(altitudeFirstAircraft - altitudeSecondAircraft) < minVerticalSeparation)
                     {
-                        decimal latitudeFirtAircraft=AllFlights[flightCountInner].CurrentPosition.Latitude;
-                        decimal latitudeSecondAircraft = AllFlights[flightCountOuter].CurrentPosition.Latitude;
-                        decimal longitudeFirstAircraft = AllFlights[flightCountInner].CurrentPosition.Longitude;
-                        decimal longitudeSecondAircraft = AllFlights[flightCountOuter].CurrentPosition.Longitude;
+                        decimal latitudeFirtAircraft=AllFlights[flightCountInner].CurrentPosition.LatitudeInNauticalMiles;
+                        decimal latitudeSecondAircraft = AllFlights[flightCountOuter].CurrentPosition.LatitudeInNauticalMiles;
+                        decimal longitudeFirstAircraft = AllFlights[flightCountInner].CurrentPosition.LongitudeInNauticalMiles;
+                        decimal longitudeSecondAircraft = AllFlights[flightCountOuter].CurrentPosition.LongitudeInNauticalMiles;
                         decimal minHorizontalSeparation=FindMinimalHorizontalSeparation(AllFlights[flightCountInner], 
                             AllFlights[flightCountOuter]);
                         decimal aircraftDistance = FindDistanceBetweenAircrafts(latitudeFirtAircraft, latitudeSecondAircraft, 
