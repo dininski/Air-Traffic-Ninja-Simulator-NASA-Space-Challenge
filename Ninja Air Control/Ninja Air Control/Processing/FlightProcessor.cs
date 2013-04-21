@@ -60,7 +60,7 @@ namespace NinjaAirControl.Processing
         private IEnumerable<Flight> LoadCurrentFlights()
         {
             //TODO Load current flights from db
-            return null;
+            return SampleData.SampleData.GetSampleFlights();
         }
 
         private void ProcessCurrentFlights(IEnumerable<Flight> flights)
