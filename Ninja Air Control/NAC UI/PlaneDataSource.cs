@@ -42,8 +42,8 @@ namespace NAC_UI
                 X = testFlight.CurrentPosition.LongitudeInNauticalMiles/18,
                 Y = testFlight.CurrentPosition.LatitudeInNauticalMiles/18,
                 Z = (int)testFlight.CurrentPosition.Altitude,
-                Company = "Pacific Airlines",
-                Destination = testFlight.FlightPlan.ArrivalAirport.Name,
+                Company = "Pacific Airlines",                
+                Destination = "1", // testFlight.FlightPlan.ArrivalAirport.Name,
                 Type = 1
             });
         }
@@ -54,6 +54,7 @@ namespace NAC_UI
 
             Airports.Add(new
             {
+                Id = "1",
                 X = jfk.Coordinates.LatitudeInNauticalMiles/18,
                 Y = jfk.Coordinates.LongitudeInNauticalMiles/18,
                 City = "NY",
