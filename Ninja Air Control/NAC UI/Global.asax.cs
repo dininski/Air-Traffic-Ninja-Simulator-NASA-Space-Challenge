@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Routing;
 using Microsoft.AspNet.SignalR;
+using NAC_UI.Flights;
+using NinjaAirControl.Processing;
 
 
 namespace NAC_UI
@@ -20,9 +22,26 @@ namespace NAC_UI
             RouteTable.Routes.MapHubs();
             PlaneDataSource.LoadData();
             TimerCallback callback = RealTimeUpdateHub.InvokeGlobalMessage;
+            
+            //Initialize the processor
+            Globals.FlightsProcessor = new FlightProcessor();
+            Globals.FlightsProcessor.ApproachingBadWeather += FlightsProcessorOnApproachingBadWeather;
+            Globals.FlightsProcessor.PossibleCollision += FlightsProcessor_PossibleCollision;
 
             // Update the position of the airplane
             timer = new Timer(callback, null, 1000, 1000);
+        }
+
+        private void FlightsProcessorOnApproachingBadWeather(object sender, FlightEventArgs flightEventArgs)
+        {
+            //throw new NotImplementedException();
+            //TODO Send the data to interface
+        }
+
+        void FlightsProcessor_PossibleCollision(object sender, NinjaAirControl.Processing.FlightEventArgs e)
+        {
+            //throw new NotImplementedException();
+            //TODO Send the data to interface
         }
 
         protected void Session_Start(object sender, EventArgs e)

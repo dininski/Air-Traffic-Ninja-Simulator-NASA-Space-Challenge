@@ -14,9 +14,9 @@ namespace NinjaAirControl.Processing
 
         public delegate void ApproachingBadWeatherEventHandler(object sender, FlightEventArgs e);
 
-        public event PossibleCollisionEventHandler OnPossibleCollision;
+        public event PossibleCollisionEventHandler PossibleCollision;
 
-        public event ApproachingBadWeatherEventHandler OnApproachingBadWeather;
+        public event ApproachingBadWeatherEventHandler ApproachingBadWeather;
 
         #endregion
 
@@ -24,24 +24,24 @@ namespace NinjaAirControl.Processing
 
         private void RaiseOnApproachingBadWeather(Flight flight, WarningLevel level)
         {
-            if (OnApproachingBadWeather != null)
+            if (ApproachingBadWeather != null)
             {
                 var eventArg = new FlightEventArgs();
                 eventArg.WarningLevel = level;
                 eventArg.Flights.Add(flight);
-                OnApproachingBadWeather(this, eventArg);
+                ApproachingBadWeather(this, eventArg);
             }
         }
 
         private void RaiseOnPossibleCollision(Flight flight, Flight flight2, WarningLevel level)
         {
-            if (OnPossibleCollision != null)
+            if (PossibleCollision != null)
             {
                 var eventArg = new FlightEventArgs();
                 eventArg.WarningLevel = level;
                 eventArg.Flights.Add(flight);
                 eventArg.Flights.Add(flight2);
-                OnPossibleCollision(this, eventArg);
+                PossibleCollision(this, eventArg);
             }
         }
 
