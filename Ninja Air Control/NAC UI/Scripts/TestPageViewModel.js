@@ -149,15 +149,16 @@
 
                 $element.css('top', planeObj.Y());
                 $element.css('left', planeObj.X());
-
-                $element.css('transform-origin', planeObj.X() + 'px ' + planeObj.Y() + 'px');
+               
 
                 var airport = self.GetAirportById(planeObj.AirportId);
+                var adjAirportX = airport.X + 6;
+                var adjAirportY = airport.Y + 7;
 
-                var length = Math.sqrt((planeObj.X() - airport.X) * (planeObj.X() - airport.X) + (planeObj.Y() - airport.Y) * (planeObj.Y() - airport.Y))
+                var length = Math.sqrt((planeObj.X() - adjAirportX) * (planeObj.X() - adjAirportX) + (planeObj.Y() - adjAirportY) * (planeObj.Y() - adjAirportY))
                 $element.css('width', length + 'px');
 
-                var angle = Math.atan2(airport.Y - planeObj.Y(), airport.X - planeObj.X()) * 180 / Math.PI;
+                var angle = Math.atan2(adjAirportY - planeObj.Y(), adjAirportX - planeObj.X()) * 180 / Math.PI;
                 $element.css('transform', 'rotate(' + angle + 'deg)');
             }
         };

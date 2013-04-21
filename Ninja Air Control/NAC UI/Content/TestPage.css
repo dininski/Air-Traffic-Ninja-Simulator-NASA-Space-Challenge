@@ -20,17 +20,23 @@ h2, h3 {
     background:url(/Content/airplane.png) no-repeat center;
     position:absolute;
     padding:9px;
+    z-index:10;
 }
 
 .plane-route {
     position:absolute;
     border:1px solid red;
+    transform-origin:2px 8px;
+    -webkit-transform-origin:2px 8px;
+    -moz-transform-origin:2px 8px;
+    z-index:1;
 }
 
 .airport-indicator {
     background:url(/Content/airport_terminal.png) no-repeat center;
     position:absolute;
     padding:17px;
+    z-index:10;
 }
 
 .plane-data {
