@@ -152,8 +152,8 @@
                
 
                 var airport = self.GetAirportById(planeObj.AirportId);
-                var adjAirportX = airport.X + 6;
-                var adjAirportY = airport.Y + 7;
+                var adjAirportX = airport.X - 5;
+                var adjAirportY = airport.Y - 15;
 
                 var length = Math.sqrt((planeObj.X() - adjAirportX) * (planeObj.X() - adjAirportX) + (planeObj.Y() - adjAirportY) * (planeObj.Y() - adjAirportY))
                 $element.css('width', length + 'px');
