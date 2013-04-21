@@ -17,10 +17,10 @@ h2, h3 {
 }
 
 .plane-indicator {
-    background:url(/Content/airplane-large.png) no-repeat center;
-    position:absolute;
-    padding:30px;
-    z-index:99;
+    background: url(/Content/airplane.png) no-repeat center;
+    position: absolute;
+    padding: 9px;
+    z-index: 99;
 }
 
 .plane-route {
