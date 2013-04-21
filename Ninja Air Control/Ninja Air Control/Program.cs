@@ -25,7 +25,7 @@ namespace NinjaAirControl
             testRoute.AddFix(new AirspaceFix(new Position3D(2, 2, 2), false, false));
             FlightPlan testPlan = new FlightPlan(testDeparturePort, testArrivalPort, new DateTime(), new DateTime(), 10, testRoute, 100, FlightType.Cargo);
             Aircraft testAircraft = new Aircraft(testData, 45);
-            var flight = new Flight(testAircraft, testPilot, testPlan);
+            var flight = new Flight(testAircraft, testPilot, testPlan, "7382");
             Console.WriteLine(flight.CurrentPosition);
             flight.UpdatePosition();
             Console.WriteLine(flight.CurrentPosition);

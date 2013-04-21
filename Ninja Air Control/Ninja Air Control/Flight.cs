@@ -24,6 +24,8 @@ namespace NinjaAirControl
 
         public FlightPlan FlightPlan { get; private set; }
 
+        public string Squack { get; set; }
+
         public bool IsActive { get; private set; }       
        
         public Position3D CurrentPosition { get; private set; }
@@ -34,11 +36,12 @@ namespace NinjaAirControl
 
         public int CurrentHeadingInDegrees { get; private set; }     
 
-        public Flight(Aircraft aircraft, Person pilot, FlightPlan flightPlan)
+        public Flight(Aircraft aircraft, Person pilot, FlightPlan flightPlan, string squack)
         {
             this.Aircraft = aircraft;
             this.Pilot = pilot;
             this.FlightPlan = flightPlan;
+            this.Squack = squack;
             this.IsActive = true;
         }
         /// <summary>
