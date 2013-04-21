@@ -18,7 +18,7 @@ namespace NAC_UI
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteTable.Routes.MapHubs();
-            MockUpDataSource.LoadData();
+            PlaneDataSource.LoadData();
             TimerCallback callback = RealTimeUpdateHub.InvokeGlobalMessage;
 
             // Update the position of the airplane

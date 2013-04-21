@@ -17,6 +17,7 @@ namespace NinjaAirControl
             var testPilot = new Person("ivan");
             Airport testDeparturePort = new Airport("testAirport", new Position3D(0,0,1), new Person("disp"));
             Airport testArrivalPort = new Airport("testAirport2", new Position3D(10,10,1), new Person("disp"));
+            Airport newAirport = new Airport("John F. Kennedy International Airport", new Position3D(-90.9187999m, 46.5482781m, 251), new Person("John Kennedy"));
             FlightRoute testRoute = new FlightRoute();
             testRoute.AddFix(new AirspaceFix(new Position3D(2, 2, 2), false, false));
             FlightPlan testPlan = new FlightPlan(testDeparturePort, testArrivalPort, new DateTime(), new DateTime(), 10000, testRoute, 100, FlightType.Cargo);
