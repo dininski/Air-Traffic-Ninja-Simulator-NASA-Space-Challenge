@@ -64,6 +64,7 @@ namespace NinjaAirControl
         /// </summary>
         public void UpdatePosition()
         {
+            this.CurrentHeadingInDegrees = CalculateCurrentHeading(FlightPlan.PreplannedRoute.GetNextFix().Coordinates);
             double currentHeadingInRadians = MeasureConverter.ConvertDegreeToRadian(CurrentHeadingInDegrees);
             decimal newLongitude = CurrentPosition.Longitude;
             decimal newLatitude = CurrentPosition.Latitude;
@@ -75,7 +76,10 @@ namespace NinjaAirControl
             this.CurrentPosition = new Position3D(newLongitude, newLatitude, CurrentPosition.Altitude);
             lastUpdated = currentDateTime;
         }
-        //TODO: Calculate current position method
-        //TODO: Method that changes the speed
+
+        public int CalculateCurrentHeading(Position3D nextPosition)
+        {
+            return 0;
+        }
     }
 }

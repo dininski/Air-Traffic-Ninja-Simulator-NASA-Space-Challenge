@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NinjaAirControl.Utils;
+using System;
 
 namespace NinjaAirControl.Data
 {
@@ -36,6 +37,19 @@ namespace NinjaAirControl.Data
         public void AddFix(AirspaceFix newFix)
         {
             RoutePoints.Add(newFix);
+        }
+
+        public AirspaceFix GetNextFix()
+        {
+            foreach (AirspaceFix fix in routePoints)
+            {
+                if (!fix.IsVisited)
+                {
+                    return fix;
+                }
+            }
+
+            throw new IndexOutOfRangeException("All fixes have been visited!");
         }
         // TODO: Remove ?
     }

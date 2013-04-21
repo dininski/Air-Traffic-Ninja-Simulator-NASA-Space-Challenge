@@ -7,11 +7,14 @@
     /// </summary>
     public class AirspaceFix
     {
+        public bool IsVisited { get; private set; }
+
         public AirspaceFix(Position3D coordinates, bool isRadioNavigationalPoint, bool isMandatoryToReport)
         {
             this.Coordinates = coordinates;
             this.IsMandatoryToReport = isMandatoryToReport;
             this.IsRadioNavigationalPoint = isRadioNavigationalPoint;
+            this.IsVisited = false;
         }
 
         public bool IsRadioNavigationalPoint { get; private set; }
@@ -19,6 +22,11 @@
         public bool IsMandatoryToReport { get; private set; }
 
         public Position3D Coordinates { get; private set; }
+
+        public void MarkAsVisited()
+        {
+            this.IsVisited = true;
+        }
         
         // has:
         //-Position3D
