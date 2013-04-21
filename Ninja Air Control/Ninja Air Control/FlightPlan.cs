@@ -29,6 +29,7 @@ namespace NinjaAirControl
         public FlightType Type { get; private set; }
 
         // TODO: Add method changeArrivalAirport()
+
         // TODO: Add method recalculateEstimatedArrivalDateTime()
         
         public FlightPlan(
